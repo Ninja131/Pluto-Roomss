@@ -1,9 +1,19 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
+import Nav from "@/components/Nav";
+import TopImage from "@/components/TopImage";
+import SearchBox from "@/components/SearchBox";
 
 export default function Home() {
   return (
     <>
+    <Nav/>
+    <TopImage/>
+    <SearchBox/>
+
+    
+
+
       <h1 className="text-3xl bg-blue-100 font-workSans">This uses Work Sans</h1>
       <h1 className="display-xl bg-blue-100 font-workSans">This uses Monsieur</h1>
 
