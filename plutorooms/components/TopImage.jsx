@@ -5,7 +5,7 @@ import React from 'react'
 const TopImage = () => {
   return (
     <section>
-        <div className='p-10 absolute w-full h-[15.875rem] border-red'>
+        <div className='p-10 absolute w-full h-[15.875rem] '>
             <Image src='/heroBackground.jpg' fill className='object-cover'/>
             
         </div>

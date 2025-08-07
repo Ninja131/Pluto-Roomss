@@ -29,6 +29,19 @@
 
   /* tokens */
   --color-banquet-200:#FFE6EE;
+  --color-banquet-300:#FFC2D5;
+
+  --color-pg-200:#FFFCE0;
+  --color-pg-300:#FFFAC2;
+
+  --color-catering-200:#EBFCFF;
+  --color-catering-300:#CCF8FF;
+
+  --color-hotels-200:#F4E6FF;
+  --color-hotels-300:#E5C7FF;
+
+  --color-restaurants-200:#EDFFEB;
+  --color-restaurants-300:#D1FFCC;
   
 }
 
