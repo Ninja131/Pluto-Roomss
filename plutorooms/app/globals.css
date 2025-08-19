@@ -4,6 +4,7 @@
 
 @import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
 
 /* Setup theme fonts and colors */
 @theme {
@@ -11,21 +12,25 @@
   --font-workSans: "Work Sans", sans-serif;
   --color-redd-500: #F54927;
 
-
   --color-primary-50:#EEF0FD;
   --color-primary-100:#DBE2FB;
   --color-primary-200:#BAC7F9;
+  --color-primary-500:#1877F2;
+  --color-primary-600:#2B5CBB;
   --color-primary-700:#1F458F;
+  --color-primary-800:#20304B;
 
-
+  --color-grayMain-50:#F6F6F6;
+  --color-grayMain-100:#E1E6ED;
+  --color-grayMain-200:#C0CADB;
+  --color-grayMain-300:#A3B1CA;
+  --color-grayMain-400:#879AB7;
+  --color-grayMain-500:#6D829D;
+  --color-grayMain-600:#59667B;
   --color-grayMain-700:#374A66;
-
-
-
-
-
-
-
+  --color-grayMain-800:#20304B;
+  --color-grayMain-900:#131D2B;
+  --color-garyMain-950:#0B1019;
 
   /* tokens */
   --color-banquet-200:#FFE6EE;
@@ -33,6 +38,7 @@
 
   --color-pg-200:#FFFCE0;
   --color-pg-300:#FFFAC2;
+  --color-pg-700:#78733B;
 
   --color-catering-200:#EBFCFF;
   --color-catering-300:#CCF8FF;
@@ -42,70 +48,72 @@
 
   --color-restaurants-200:#EDFFEB;
   --color-restaurants-300:#D1FFCC;
-  
+
+  --color-surface-50: var(--color-grayMain-50);
+
 }
-
-
 
 /* Custom utility classes must go inside @layer */
 @layer utilities {
   .display-xl {
-    @apply text-[4rem] leading-[4.5rem] tracking-[-0.12rem] font-[700];
+    @apply text-[4rem] leading-[4.5rem] tracking-[-0.12rem] font-[700] font-workSans;
   }
 
   .h1 {
-    @apply text-[3rem] leading-[3.5rem] tracking-[-0.06rem] font-[700];
+    @apply text-[3rem] leading-[3.5rem] tracking-[-0.06rem] font-[700] font-workSans;
   }
 
   .h2 {
-    @apply text-[2.25rem] leading-[2.75rem] tracking-[-0.024rem] font-[700];
+    @apply text-[2.25rem] leading-[2.75rem] tracking-[-0.024rem] font-[700] font-workSans;
   }
 
   .h3 {
-    @apply text-[1.75rem] leading-[2.25rem] tracking-[-0.00875rem] font-[700];
+    @apply text-[1.75rem] leading-[2.25rem] tracking-[-0.00875rem] font-[700] font-workSans;
   }
 
   .h4 {
-    @apply text-[1.375rem] leading-[1.75rem] tracking-normal font-[700];
+    @apply text-[1.375rem] leading-[1.75rem] tracking-normal font-[700] font-workSans;
   }
 
   .title {
-    @apply text-[1.125rem] leading-[1.75rem] tracking-normal font-[700];
+    @apply text-[1.125rem] leading-[1.75rem] tracking-normal font-[700] font-workSans;
   }
 
   .body-lg {
-    @apply text-[1.125rem] leading-[1.75rem] tracking-normal font-[400];
+    @apply text-[1.125rem] leading-[1.75rem] tracking-normal font-[400] font-workSans;
+  }
+
+  .body-txt{
+    @apply text-[1rem] leading-[1.5rem] tracking-normal font-[400] font-workSans;
   }
 
   .body-sm {
-    @apply text-[0.875rem] leading-[1.25rem] tracking-normal font-[400];
+    @apply text-[0.875rem] leading-[1.25rem] tracking-normal font-[400] font-workSans;
   }
 
   .body-xs {
-    @apply text-[0.75rem] leading-[1.125rem] tracking-normal font-[400];
+    @apply text-[0.75rem] leading-[1.125rem] tracking-normal font-[400] font-workSans;
   }
 
-  .button {
-    @apply text-[1rem] leading-[1.25rem] tracking-normal font-[400];
+  .button-txt {
+    @apply text-[1rem] leading-[1.25rem] tracking-normal font-[400] font-workSans;
   }
 
   .label-sm {
-    @apply text-[0.75rem] leading-[1.25rem] tracking-normal font-[400];
+    @apply text-[0.75rem] leading-[1.25rem] tracking-normal font-[400] font-workSans;
   }
 
   .logoText{
-    @apply text-[1.125rem] leading-4 font-[800];
+    @apply text-[1.125rem] leading-4 font-[800] font-workSans;
   }
-
 
 /*||||||||| container |||||||||||| */
   .max-container{
-  @apply max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 xl:px-0;
+  @apply max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 xl:px-4;
 }
 .border-red{
   @apply border-2 border-red-500;
 }
-
 
 /*||||||||| Flex  |||||||||||| */
 .flexCenter{
@@ -116,6 +124,87 @@
   @apply flex items-center justify-between;
 }
 
+/* ||||||responsive heading|||||| */
+.res-title{
+  @apply text-[1.125rem] leading-[1.75rem] tracking-normal font-[700]   md:text-[1.75rem] md:leading-[2.25rem] md:tracking-[-0.00875rem] md:font-[700]     xl:text-[3rem] xl:leading-[3.5rem] xl:tracking-[-0.06rem] xl:font-[700]  ;
 }
 
+
+.property-heading{
+  @apply text-[1.375rem] leading-[1.75rem] tracking-normal font-[700] font-workSans     lg:text-[2.25rem] lg:leading-[2.75rem] lg:tracking-[-0.024rem] lg:font-[700];
+}
+
+}
+
+@theme inline {
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+
+    }
+
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+
+    }
+
+  }
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+
+    }
+
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+
+    }
+
+  }
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+
+    }
+
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+
+    }
+
+  }
+
+}
 

@@ -5,8 +5,8 @@ import React from 'react'
 const TopImage = () => {
   return (
     <section>
-        <div className='p-10 absolute w-full h-[15.875rem] '>
-            <Image src='/heroBackground.jpg' fill className='object-cover'/>
+        <div className='h-65 w-full border-red relative'>
+            <Image src='/heroBackground.jpg' fill alt='top image' className='object-cover object-center '/>
             
         </div>
     </section>
